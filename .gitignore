@@ -3,6 +3,7 @@ logs
 npm-debug.log*
 coverage
 .lock-*
+*.lock
 *-lock.json
 *-lock.yaml
 build
