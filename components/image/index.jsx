@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { styled } from "@linaria/react";
+import Button from "@mui/material/Button";
+
+const Container = styled.div`
+  width: 500px;
+  height: 500px;
+  position: relative;
+`;
 
 export default function ImageContainer() {
   const [imgUrl, setImgUrl] = useState(null);
@@ -14,9 +22,16 @@ export default function ImageContainer() {
   return (
     <div>
       <input type="file" onChange={onImageChange} />
-      <img src={imgUrl} alt="image url" />
+      <Button variant="outlined">Text</Button>
       {imgUrl && (
-        <Image src={imgUrl} alt="Vercel Logo" width={100} height={100} />
+        <Container>
+          <Image
+            src={imgUrl}
+            alt="Vercel Logo"
+            layout="fill"
+            objectFit="contain"
+          />
+        </Container>
       )}
     </div>
   );
